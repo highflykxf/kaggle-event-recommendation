@@ -2,10 +2,9 @@ import random
 from dateutil.parser import parse
 import time
 from math import sqrt
-
-import simplejson as json
+import json
 import pandas as pd
-from pymongo import Connection, ASCENDING
+from pymongo import MongoClient, ASCENDING
 import numpy as np
 
 from model import Model
@@ -13,7 +12,7 @@ from eval import apk
 '''
     Initialize PyMongo
 '''
-connection = Connection()
+connection = MongoClient()
 db = connection.recommend
 user_info = db.user_info
 event_info = db.event_info
